@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a personalized 30-day reentry action plan.">
+  <title>NextStepAI | Reentry Planning Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="#home"><span>N</span> NextStepAI</a>
+    <nav>
+      <a href="#about">About</a>
+      <a class="nav-button" href="#planner">Build My Plan</a>
+    </nav>
+  </header>
 
+  <main id="home">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">A clearer path forward</p>
+        <h1>Your next chapter starts with a plan.</h1>
+        <p class="lead">Answer a few questions and receive practical next steps for employment, housing, transportation, and personal stability.</p>
+        <a class="button" href="#planner">Create My 30-Day Plan</a>
+        <p class="small">No information is saved or shared.</p>
+      </div>
+      <aside>
+        <p class="card-title">Your first 30 days</p>
+        <div class="preview"><b>1</b><p><strong>Week 1</strong><br>Gather important documents</p></div>
+        <div class="preview"><b>2</b><p><strong>Week 2</strong><br>Update your résumé and skills</p></div>
+        <div class="preview"><b>3</b><p><strong>Weeks 3–4</strong><br>Apply, connect, and follow up</p></div>
+      </aside>
+    </section>
+
+    <section id="about" class="about">
+      <p class="eyebrow">How it works</p>
+      <h2>Small questions. Useful next steps.</h2>
+      <div class="features">
+        <article><b>01</b><h3>Tell us your goal</h3><p>Share what you want to focus on first.</p></article>
+        <article><b>02</b><h3>Identify barriers</h3><p>Select the areas where you need support.</p></article>
+        <article><b>03</b><h3>Receive a plan</h3><p>Get a prioritized checklist you can begin today.</p></article>
+      </div>
+    </section>
+
+    <section id="planner" class="planner">
+      <p class="eyebrow">Personalized planner</p>
+      <h2>Build your next-step plan</h2>
+      <p>Choose the answers that best describe your current situation.</p>
+
+      <form id="planForm">
+        <div class="form-grid">
+          <label>First name
+            <input id="firstName" type="text" maxlength="30" placeholder="Enter your first name">
+          </label>
+          <label>Main goal
+            <select id="goal" required>
+              <option value="">Select a goal</option>
+              <option value="employment">Find a job</option>
+              <option value="training">Start education or job training</option>
+              <option value="housingGoal">Find stable housing</option>
+              <option value="routine">Build a stable daily routine</option>
+            </select>
+          </label>
+          <label>Do you have a current résumé?
+            <select id="resume" required>
+              <option value="">Select</option><option value="yes">Yes</option><option value="no">No</option>
+            </select>
+          </label>
+          <label>Do you have identification documents?
+            <select id="documents" required>
+              <option value="">Select</option><option value="all">Yes</option><option value="some">Some</option><option value="none">No</option>
+            </select>
+          </label>
+          <label>How would you describe your housing?
+            <select id="housing" required>
+              <option value="">Select</option><option value="stable">Stable</option><option value="temporary">Temporary</option><option value="urgent">Need housing soon</option>
+            </select>
+          </label>
+          <label>Do you have reliable transportation?
+            <select id="transportation" required>
+              <option value="">Select</option><option value="yes">Yes</option><option value="limited">Sometimes</option><option value="no">No</option>
+            </select>
+          </label>
+        </div>
+
+        <fieldset>
+          <legend>What other support would help right now?</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="support" value="wellness"> Mental wellness</label>
+            <label><input type="checkbox" name="support" value="childcare"> Childcare</label>
+            <label><input type="checkbox" name="support" value="legal"> Legal assistance</label>
+            <label><input type="checkbox" name="support" value="digital"> Computer skills</label>
+          </div>
+        </fieldset>
+        <button class="button form-button" type="submit">Generate My Plan</button>
+        <p id="formError" class="error" role="alert"></p>
+      </form>
+
+      <section id="results" class="results" aria-live="polite" hidden>
+        <div class="results-head">
+          <div>
+            <p class="eyebrow">Your personalized roadmap</p>
+            <h2 id="resultTitle">Your 30-Day Plan</h2>
+          </div>
+          <button id="printButton" class="print-button" type="button">Print Plan</button>
+        </div>
+        <p id="resultIntro"></p>
+        <div id="planList"></div>
+        <p class="encouragement"><strong>Remember:</strong> Progress does not have to happen all at once. Complete one step, ask for help when needed, and keep moving forward.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>NextStepAI — Practical guidance for a stronger return.</p>
+    <small>This tool provides general guidance and does not replace legal, clinical, or case-management services.</small>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
